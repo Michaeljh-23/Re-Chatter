@@ -1,5 +1,6 @@
 import React from 'react';
 import Fetcher from './lib/fetcher.js';
+import Form from './components/AddForm.jsx';
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -8,21 +9,27 @@ class App extends React.Component {
       user: '',
       messageList: [],
       roomList: [],
+      currentRoom: 'Lobby',
     };
   }
-  Fetch() {
-    Fetcher.readAll((data) => {
-      console.log(data);
-    });
-  }
+
   render() {
-    this.Fetch();
     return (
       <main className='main-ct'>
         <h1>Re-Chatter</h1>
         <div>Room</div>
-        <div>Add Room</div>
-        <div>Add Massage</div>
+        <Form
+          submit={(data) => {
+            console.log('add room', data);
+          }}
+          name='Room'
+        />
+        <Form
+          submit={(data) => {
+            console.log('add Message', data);
+          }}
+          name='Message'
+        />
       </main>
     );
   }
