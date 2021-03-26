@@ -13,8 +13,7 @@ app.get('/message', (req, res) => {
 });
 
 app.post('/message', (req, res) => {
-  console.log(req.body);
-  data.shift(req.body);
+  data.unshift(req.body);
   res.sendStatus(201);
 });
 
