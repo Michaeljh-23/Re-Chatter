@@ -1,11 +1,10 @@
 import React from 'react';
 
-const MessageItem = ({ message }) => (
+// TODO: destructor your props
+const MessageItem = (props) => (
   <div>
-    <div className='username ' href='#'>
-      {message.username}
-    </div>
-    <div className='text'>{message.text}</div>
+    <div className='username'>{/* TODO: add username */}</div>
+    <div className='text'>{/* TODO: add text */}</div>
   </div>
 );
 

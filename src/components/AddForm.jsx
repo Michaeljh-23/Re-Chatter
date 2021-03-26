@@ -3,25 +3,17 @@ import React from 'react';
 class AddForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      formValue: '',
-    };
-    this.onFormInput = this.onFormInput.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
+    // TODO: add state
+    // TODO: add functional binding here
   }
 
   onFormInput(e) {
-    this.setState({
-      formValue: e.target.value,
-    });
+    // TODO: write function to handle change on form input
   }
 
   onSubmit(e) {
     e.preventDefault();
-    this.props.submit(this.state.formValue);
-    this.setState({
-      formValue: '',
-    });
+    // TODO: write function to handle
   }
 
   render() {
@@ -31,12 +23,12 @@ class AddForm extends React.Component {
           <input
             type='text'
             placeholder={`New ${this.props.name}`}
-            value={this.state.formValue}
-            onChange={this.onFormInput}
+            // TODO: set value so it can be tracked
+            // TODO: add change handler
           />
           <button
             type='submit'
-            onClick={this.onSubmit}
+            // TODO: add click handler
           >{`Add ${this.props.name}`}</button>
         </form>
       </div>

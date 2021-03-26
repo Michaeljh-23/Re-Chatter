@@ -3,7 +3,6 @@ import Fetch from './lib/fetcher';
 import ChooseRoom from './components/ChooseRoom.jsx';
 import Form from './components/AddForm.jsx';
 import MessageList from './components/MessageList.jsx';
-// import sam÷pleData from './data';
 
 class App extends React.Component {
   constructor(props) {
@@ -14,65 +13,56 @@ class App extends React.Component {
       roomList: [],
       currentRoom: '',
     };
-    this.selectRoom = this.selectRoom.bind(this);
-    this.addMessage = this.addMessage.bind(this);
-    this.addRoom = this.addRoom.bind(this);
-    this.getData = this.getData.bind(this);
+    // TODO: add functional binding here
   }
 
   getData() {
-    Fetch.readAll((data) => {
-      this.setState({
-        roomList: [
-          ...data.reduce((room, message) => {
-            room.add(message.room);
-            return room;
-          }, new Set()),
-        ],
-        messageList: data,
-      });
-    });
+    // TODO: use Fetch.readAll to request message list data from API
+    // create room list from data room list should contain unique values (case sensitive)
+    // add message list and room list to state
   }
 
   componentDidMount() {
-    const username = prompt('Please Enter a Username', 'name...');
-    this.setState({ username });
-    this.getData();
+    // TODO: use prompt() to get username and set it in this.state
+    // fetch initial data
+    // HINT: don't re-write getData logic
   }
   selectRoom(e) {
-    e.preventDefault();
-    this.setState({
-      currentRoom: e.target.value,
-    });
+    // TODO: write function to handle changes to the selected room
   }
 
   addRoom(room) {
-    this.setState({
-      roomList: [...this.state.roomList, room],
-    });
+    // TODO: write function that adds new room to roomList
+    // NOTE: this room will only be save permanently if a message is posted in that room
   }
 
   addMessage(text) {
-    const message = {
-      username: this.state.username,
-      room: this.state.currentRoom || 'Lobby',
-      text,
-    };
-    Fetch.create(message, this.getData);
+    // TODO: use Fetch.create write function that adds a new message
+    // HINT: create does not return data so think about how you can update the messageList in state to show the new message
   }
   render() {
     return (
       <main className='main-ct'>
         <h1>Re-Chatter</h1>
         <ChooseRoom
-          roomList={this.state.roomList}
-          selectRoom={this.selectRoom}
+        // TODO: pass props
         />
-        <Form submit={this.addRoom} name='Room' />
-        <Form submit={this.addMessage} name='Message' />
+        {/* 
+        For out add room and add message form we are using the same Form component 
+        and modularizing it by passing different props.
+        This is a really powerful react design paradigm that allows developers to write DRYer code.
+        Really take the time to understand what is going on here and in AddForm.jsx
+        */}
+        <Form
+          name='Room'
+          // TODO: pass addRoom
+        />
+        <Form
+          name='Message'
+          // TODO: pass addMessage
+        />
         <MessageList
-          messageList={this.state.messageList}
-          currentRoom={this.state.currentRoom}
+        // TODO: pass props
         />
       </main>
     );

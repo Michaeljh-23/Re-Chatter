@@ -1,14 +1,15 @@
 import React from 'react';
 
-const ChooseRoom = ({ roomList, selectRoom }) => (
+// TODO: destructor your props
+const ChooseRoom = (props) => (
   <div>
-    <select name='' id='' onChange={selectRoom}>
+    <select
+    // TODO: add change handler
+    >
       <option value=''>All</option>
-      {roomList.map((room, i) => (
-        <option key={`${room}${i}`} value={room}>
-          {room}
-        </option>
-      ))}
+      {/*
+        TODO: add rest of room list <options> programmatically 
+       */}
     </select>
   </div>
 );
