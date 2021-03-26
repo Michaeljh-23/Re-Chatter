@@ -2,9 +2,9 @@ import $ from 'jquery';
 const Fetcher = {
   create: (message, callback) => {
     $.post('/message', message)
-      .done((item) => {
+      .done(() => {
         if (callback) {
-          callback(item);
+          callback();
         }
       })
       .fail(({ responseJSON }) => {

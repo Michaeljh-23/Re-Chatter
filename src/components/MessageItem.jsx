@@ -2,10 +2,10 @@ import React from 'react';
 
 const MessageItem = ({ message }) => (
   <div>
-    <div class='username ' href='#'>
+    <div className='username ' href='#'>
       {message.username}
     </div>
-    <div class='text'>{message.text}</div>
+    <div className='text'>{message.text}</div>
   </div>
 );
 
