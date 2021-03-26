@@ -34,3 +34,5 @@ const _data = [
   { username: 'Dan', text: 'will I?', room: 'RedSucks' },
   { username: 'Clair', text: 'No', room: 'RedSucks' },
 ];
+
+export default _data;
