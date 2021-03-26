@@ -63,13 +63,15 @@ class App extends React.Component {
   render() {
     return (
       <main className='main-ct'>
-        <h1>Re-Chatter</h1>
-        <ChooseRoom
-          roomList={this.state.roomList}
-          selectRoom={this.selectRoom}
-        />
-        <Form submit={this.addRoom} name='Room' />
-        <Form submit={this.addMessage} name='Message' />
+        <div id='main'>
+          <h1>Re-Chatter</h1>
+          <ChooseRoom
+            roomList={this.state.roomList}
+            selectRoom={this.selectRoom}
+          />
+          <Form submit={this.addRoom} name='Room' />
+          <Form submit={this.addMessage} name='Message' />
+        </div>
         <MessageList
           messageList={this.state.messageList}
           currentRoom={this.state.currentRoom}
