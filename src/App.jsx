@@ -42,25 +42,27 @@ class App extends React.Component {
   }
   render() {
     return (
-      <main className='main-ct'>
-        <h1>Re-Chatter</h1>
-        <ChooseRoom
-        // TODO: pass props
-        />
-        {/* 
+      <main>
+        <div id='main'>
+          <h1>Re-Chatter</h1>
+          <ChooseRoom
+          // TODO: pass props
+          />
+          {/* 
         For out add room and add message form we are using the same Form component 
         and modularizing it by passing different props.
         This is a really powerful react design paradigm that allows developers to write DRYer code.
         Really take the time to understand what is going on here and in AddForm.jsx
         */}
-        <Form
-          name='Room'
-          // TODO: pass addRoom
-        />
-        <Form
-          name='Message'
-          // TODO: pass addMessage
-        />
+          <Form
+            name='Room'
+            // TODO: pass addRoom
+          />
+          <Form
+            name='Message'
+            // TODO: pass addMessage
+          />
+        </div>
         <MessageList
         // TODO: pass props
         />

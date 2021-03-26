@@ -3,8 +3,10 @@ import React from 'react';
 // TODO: destructor your props
 const ChooseRoom = (props) => (
   <div>
+    <label htmlFor='select'>Rooms: </label>
     <select
-    // TODO: add change handler
+      id='select'
+      // TODO: add change handler
     >
       <option value=''>All</option>
       {/*
