@@ -1,28 +1,19 @@
-# Simple React Practice:
+# Re-Chatter Classes:
 
-Build a chat client that allows you to communicate with fellow user. You'll do this using `$.ajax` to save (POST) and fetch (GET) JSON data to and from a remote server.
+## A Simple React Practice project
 
-There are 3 working branches to choose from
+Build a chat client with React that allows you to communicate with fellow user. You'll do this using `$.ajax` to save (POST) and fetch (GET) JSON data to and from a remote server.
 
-### `Classes:`
+## Class implementation
 
-- Stubbed out file strucure using Class components and no hooks
-- ToDos but no writen code
+This is the Classes implementation (no Hooks):
 
-### `Functional:`
-
-- Stubbed out Stubbed out file strucure using Funcional components and hooks
-- ToDos but no writen code
-
-### `Ajax-Async:`
-
-- For practicing integrating Async API calls with react (designed to be easily completed in an hour)
-- Much of the project is builld already using Class components.
-- Ajax requests, new meesage are not complete,
-
-Sollution Branches are Availiblle
-
-​
+- To get started run:
+  - `npm install`
+  - `npm run server`
+  - `npm start`
+- You will be all your work inside src/App.jsx and src/components
+- It might help to look at how fetcher.js is implemented (src/lib/fetcher.js)
 
 ## Available Scripts
 
@@ -36,15 +27,9 @@ Open [http://localhost:3000](http://localhost:3000/) to view it in the browser.
 The page will reload if you make edits.
 You will also see any lint errors in the console.
 
-### `npm run build`
+### `npm run server`
 
-Builds the app for production to the `build` folder.
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Runs the server
 
 ### `npm run eject`
 
